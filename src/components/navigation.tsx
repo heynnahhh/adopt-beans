@@ -9,12 +9,10 @@ const navList = [
 
 export default function Navigation(){
     return (
-        <nav className="flex items-center justify-between p-6 lg:px-8">
             <div className="lg:flex lg:gap-x-12">
                 {navList.map((v,k) => 
                     <a key={k} href={v.href}>{v.name}</a>
                 )}
             </div>
-        </nav>
     )
 }

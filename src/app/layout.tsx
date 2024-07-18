@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
@@ -18,10 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`inter.className`}>
+      <body className={`bg-ecru-white text-charcoal-grey dark:text-white dark:bg-gradient-to-b dark:from-charcoal-grey dark:to-black ${inter.className}`}>
         <Header />
         {children}
         <Footer />
+        <Script id="theme" strategy="beforeInteractive">
+          {`if(localStorage.theme === 'dark' || ( !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme:dark)').matches)){
+              document.documentElement.classList.add('dark');
+            }`
+          }
+        </Script>
       </body>
     </html>
   );

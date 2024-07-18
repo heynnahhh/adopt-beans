@@ -6,12 +6,17 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "logo-dark": "url('/images/logo-dark.png')",
+        "logo-light": "url('/images/logo-light.png')",
+        "logo-mini-dark": "url('/images/logo-mini-dark.png')",
+        "logo-mini-light": "url('/images/logo-mini-light.png')",
       },
       colors:{
         "pumpkin-orange": "#FF7828",
